@@ -1,0 +1,4 @@
+serviceType: ClusterIP
+port: 8080
+schema:
+  enabled: false
