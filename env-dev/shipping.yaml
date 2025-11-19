@@ -8,9 +8,12 @@ env:
 schema:
   enabled: true
   containers:
-    app-user: app-user.sql
-    schema: schema.sql
-    master-data: master-data.sql
+    - name: app-user
+      file: app-user.sql
+    - name: schema
+      file: schema.sql
+    - name: master-data
+      file: master-data.sql
   env:
     - name: DB_TYPE
       value: "mysql"

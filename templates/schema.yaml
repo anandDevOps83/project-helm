@@ -10,13 +10,13 @@ spec:
   template:
     spec:
       containers:
-        {{- range $k, $v := .Values.schema.containers }}
-        - name: {{ $k }}
+        {{- range $item := .Values.schema.containers }}
+        - name: {{ $item.name }}
           image: "public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load"
           env:
             {{- toYaml $.Values.schema.env | nindent 12 }}          
             - name: SCHEMA_FILE
-              value: db/{{ $v }} 
+              value: db/{{ $item.file }} 
         {{- end }}    
       restartPolicy: Never
   backoffLimit: 0 

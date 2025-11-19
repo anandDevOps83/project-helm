@@ -8,7 +8,8 @@ env:
 schema:
   enabled: true
   containers:
-    master-data: master-data.js
+    - name: master-data
+      file: master-data.js
   env:
     - name: DB_TYPE
       value: "mongo"
