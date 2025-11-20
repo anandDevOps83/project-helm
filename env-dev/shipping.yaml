@@ -24,4 +24,4 @@ schema:
     - name: DB_USER
       value: "root"
     - name: DB_PASS
-      value: "RoboShop@1" 
+      value: RoboShop@1
