@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: {{ .Values.name }}
-#  namespace: roboshop
+  namespace: roboshop
   labels:
     appName: {{ .Values.name }}
 spec:
