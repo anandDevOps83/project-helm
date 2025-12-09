@@ -2,22 +2,26 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: schema-{{ .Values.name }}
-  namespace: roboshop
+  name: {{ .Values.name }}-schema
+#  namespace: roboshop
   labels:
     appName: {{ .Values.name }}
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: before-hook-creation    
 spec:
   template:
     spec:
       containers:
-        {{- range $item := .Values.schema.containers }}
-        - name: {{ $item.name }}
+#        {{- range $item := .Values.schema.containers }}
+        - name: {{ .Values.name }}-schema
           image: "public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load"
-          env:
-            {{- toYaml $.Values.schema.env | nindent 12 }}          
-            - name: SCHEMA_FILE
-              value: db/{{ $item.file }} 
-        {{- end }}    
+#          env:
+#            {{- toYaml $.Values.schema.env | nindent 12 }}          
+          envFrom:
+          - secretRef:
+              name: {{ .Values.name }}
+#        {{- end }}    
       restartPolicy: Never
   backoffLimit: 0 
 {{- end -}}  
