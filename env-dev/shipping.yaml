@@ -1,27 +1,27 @@
 name: shipping
-env:
-  - name: CART_ENDPOINT
-    value: "cart:8080"
-  - name: DB_HOST
-    value: "mysql.dev.adevops.click"
+# env:
+#   - name: CART_ENDPOINT
+#     value: "cart:8080"
+#   - name: DB_HOST
+#     value: "mysql.dev.adevops.click"
 
 schema:
   enabled: true
-  containers:
-    - name: app-user
-      file: app-user.sql
-    - name: schema
-      file: schema.sql
-    - name: master-data
-      file: master-data.sql
-  env:
-    - name: DB_TYPE
-      value: "mysql"
-    - name: APP_GIT_URL
-      value: "https://github.com/roboshop-devops-project-v3/shipping"
-    - name: DB_HOST
-      value: "mysql.dev.adevops.click"
-    - name: DB_USER
-      value: "root"
-    - name: DB_PASS
-      value: "RoboShop@1"
+  # containers:
+  #   - name: app-user
+  #     file: app-user.sql
+  #   - name: schema
+  #     file: schema.sql
+  #   - name: master-data
+  #     file: master-data.sql
+  # env:
+  #   - name: DB_TYPE
+  #     value: "mysql"
+  #   - name: APP_GIT_URL
+  #     value: "https://github.com/roboshop-devops-project-v3/shipping"
+  #   - name: DB_HOST
+  #     value: "mysql.dev.adevops.click"
+  #   - name: DB_USER
+  #     value: "root"
+  #   - name: DB_PASS
+  #     value: "RoboShop@1"

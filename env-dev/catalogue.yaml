@@ -1,19 +1,19 @@
 name: catalogue
-env:
-  - name: MONGO
-    value: "true"
-  - name: MONGO_URL
-    value: "mongodb://mongo.dev.adevops.click:27017/catalogue"
+# env:
+#   - name: MONGO
+#     value: "true"
+#   - name: MONGO_URL
+#     value: "mongodb://mongo.dev.adevops.click:27017/catalogue"
 
 schema:
   enabled: true
-  containers:
-    - name: master-data
-      file: master-data.js
-  env:
-    - name: DB_TYPE
-      value: "mongo"
-    - name: APP_GIT_URL
-      value: "https://github.com/roboshop-devops-project-v3/catalogue"
-    - name: DB_HOST
-      value: "mongo.dev.adevops.click"
+  # containers:
+  #   - name: master-data
+  #     file: master-data.js
+  # env:
+  #   - name: DB_TYPE
+  #     value: "mongo"
+  #   - name: APP_GIT_URL
+  #     value: "https://github.com/roboshop-devops-project-v3/catalogue"
+  #   - name: DB_HOST
+  #     value: "mongo.dev.adevops.click"
